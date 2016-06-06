@@ -15,18 +15,21 @@
 //=============================================================================
 package org.uncommons.reportng;
 
-import java.util.Locale;
+import org.testng.ITest;
 import org.testng.annotations.Test;
+
+import java.util.Locale;
 
 /**
  * Unit test for the {@link ReportMetadata} class.
+ *
  * @author Daniel Dyer
  */
-public class ReportMetadataTest
-{
-    @Test
-    public void testDefaultLocale()
-    {
+
+public class ReportMetadataTest implements ITest {
+
+    @Test(testName = "语言本地化默认测试", description = "测试语言默认本地化是否正确")
+    public void testDefaultLocale() {
         // Unset any previously set property.
         System.getProperties().remove(ReportMetadata.LOCALE_KEY);
         // Make sure we know what the default locale is before we start.
@@ -37,10 +40,8 @@ public class ReportMetadataTest
         assert locale.equals("en_GB") : "Wrong locale: " + locale;
     }
 
-
-    @Test
-    public void testLocaleLanguageOnly()
-    {
+    @Test(testName = "语言本地化", description = "测试语言能否本地化")
+    public void testLocaleLanguageOnly() {
         // Unset any previously set property.
         System.setProperty(ReportMetadata.LOCALE_KEY, "fr");
 
@@ -51,8 +52,7 @@ public class ReportMetadataTest
 
 
     @Test
-    public void testLocaleLanguageAndCountry()
-    {
+    public void testLocaleLanguageAndCountry() {
         // Unset any previously set property.
         System.setProperty(ReportMetadata.LOCALE_KEY, "fr_CA");
 
@@ -63,13 +63,16 @@ public class ReportMetadataTest
 
 
     @Test
-    public void testLocaleLanguageCountryAndVariant()
-    {
+    public void testLocaleLanguageCountryAndVariant() {
         // Unset any previously set property.
         System.setProperty(ReportMetadata.LOCALE_KEY, "fr_CA_POSIX");
 
         ReportMetadata metadata = new ReportMetadata();
         String locale = metadata.getLocale().toString();
         assert locale.equals("fr_CA_POSIX") : "Wrong locale: " + locale;
+    }
+
+    public String getTestName() {
+        return "本地化测试用例";
     }
 }

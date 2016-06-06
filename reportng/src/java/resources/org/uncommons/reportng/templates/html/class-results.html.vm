@@ -7,13 +7,18 @@
 <tr>
   <td class="method">
     #set ($testInstanceName = "")
-    #if ($testResult.testName)
-      #set ($testInstanceName = " ($testResult.testName)")
+##    #if ($testResult.testName)
+##      #set ($testInstanceName = " ($testResult.testName)")
+##    #end
+    #if ($testResult.method.methodName && $testResult.method.methodName.length() > 0)
+      #set ($testInstanceName = "$testResult.method.methodName")
+    #else
+      #set ($testInstanceName = "")
     #end
     #if ($testResult.method.description && $testResult.method.description.length() > 0)
-      <span class="description" title="$testResult.method.description">$testResult.name$testInstanceName</span>
+      <span class="description" title="$testResult.method.description">$testInstanceName</span>
     #else
-      $testResult.name$testInstanceName
+      $testInstanceName
     #end
   </td>
   <td class="duration">

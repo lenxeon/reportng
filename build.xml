@@ -89,7 +89,7 @@
   <target name="test" depends="jar" description="Run the unit tests.">
     <uncommons:test suites="${conf.dir}/testng.xml"
                     title="ReportNG Unit Test Report"
-                    mincoverage="${minimum.coverage}" />
+                    mincoverage="0" />
   </target>
 
 

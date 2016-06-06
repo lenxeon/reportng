@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright 2006-2013 Daniel W. Dyer
+// Copyright 2006-2010 Daniel W. Dyer
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,19 +13,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //=============================================================================
-package org.uncommons.reportng;
 
-import org.testng.ITestResult;
+package org.uncommons.reportng.listener;
 
-import java.util.Comparator;
+import org.testng.*;
+
+import java.io.File;
+import java.util.Collection;
 
 /**
- * Comparator for sorting TestNG test results alphabetically by method name.
+ * CustomSuiteListener listens to the events related to a test suite.
  *
- * @author Daniel Dyer
+ * @author Bharat Mehta
  */
-class TestResultComparator implements Comparator<ITestResult> {
-    public int compare(ITestResult result1, ITestResult result2) {
-        return result1.getStartMillis() > result2.getStartMillis() ? 1 : -1;
+public class CustomSuiteListener implements ISuiteListener {
+
+
+    public void onStart(ISuite iSuite) {
+        System.out.println("准备测试环境 iSuite " + iSuite.getClass().getName());
+
+
+
+
+
+    }
+
+    public void onFinish(ISuite iSuite) {
+
     }
 }

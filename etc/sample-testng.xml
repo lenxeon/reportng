@@ -16,4 +16,8 @@
     </classes>
   </test>
 
+  <listeners>
+    <listener class-name="org.uncommons.reportng.listener.CustomSuiteListener"/>
+  </listeners>
+
 </suite>
