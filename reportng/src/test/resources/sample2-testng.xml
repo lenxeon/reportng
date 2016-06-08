@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="鱼骨自动化测试v2.0" verbose="1" >
+
+  <!-- Use the same tests again. -->
+  <test name="仅成功的测试" >
+    <classes>
+      <class name="org.uncommons.reportng.sample.SuccessfulTests" />
+    </classes>
+  </test>
+
+</suite>

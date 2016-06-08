@@ -6,3 +6,12 @@ docs
 website
 release
 temp
+.idea
+/components
+/*.iml
+/**/*.iml
+/logs
+/**/logs
+/target
+/**/target
+

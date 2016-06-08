@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Unit Tests" verbose="1">
+
+    <!--这代码一个单元测试用例-->
+    <test name="鱼骨自动化测试项目">
+        <packages>
+            <package name="org.uncommons.reportng"/>
+        </packages>
+    </test>
+    <parameter name="useDefaultListeners" value="false"/>
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="org.uncommons.reportng.support.listener.CustomSuiteListener"/>
+        <listener class-name="org.uncommons.reportng.support.listener.CustomTestListener"/>
+        <listener class-name="org.uncommons.reportng.support.listener.CustomResultListener"/>
+        <listener class-name="org.uncommons.reportng.support.listener.Interceptor"/>
+    </listeners>
+</suite>

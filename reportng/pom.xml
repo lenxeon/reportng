@@ -1,35 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>reportng-parent</artifactId>
+        <groupId>org.uncommons</groupId>
+        <version>1.1.7-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-<modelVersion>4.0.0</modelVersion>
-  <name>ReportNG</name>
-  <groupId>org.uncommons</groupId>
-  <artifactId>reportng</artifactId>
-  <version>@VERSION@</version>
-  <packaging>jar</packaging>
-  <url>https://reportng.dev.java.net/</url>
+    <artifactId>reportng</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.9.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.9.10</version>
+        </dependency>
+    </dependencies><build>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
 
-  <licenses>
-    <license>
-      <name>Apache License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-  
-  <dependencies>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>[5.0,)</version>
-    </dependency>
-    <dependency>
-      <groupId>velocity</groupId>
-      <artifactId>velocity</artifactId>
-      <version>1.4</version>
-    </dependency>
-  </dependencies>
-  
+        <!--清理插件-->
+        <plugin>
+            <artifactId>maven-clean-plugin</artifactId>
+            <configuration>
+                <excludeDefaultDirectories>true</excludeDefaultDirectories>
+                <filesets>
+                    <fileset>
+                        <directory>../target</directory>
+                    </fileset>
+                </filesets>
+            </configuration>
+        </plugin>
+
+        <!--doc-->
+        <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+        <!--<version>2.10.3</version>-->
+        <!--<executions>-->
+        <!--<execution>-->
+        <!--<id>attach-javadocs</id>-->
+        <!--<phase>package</phase>-->
+        <!--<goals>-->
+        <!--<goal>jar</goal>-->
+        <!--</goals>-->
+        <!--<configuration>-->
+        <!--<encoding>UTF-8</encoding>-->
+        <!--</configuration>-->
+        <!--</execution>-->
+        <!--</executions>-->
+        <!--<configuration>-->
+        <!--<encoding>UTF-8</encoding>-->
+        <!--</configuration>-->
+        <!--</plugin>-->
+
+        <!--同时打包源码-->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.0.0</version>
+            <executions>
+                <execution>
+                    <id>attach-sources</id>
+                    <goals>
+                        <goal>jar-no-fork</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+
+        <!--编译插件-->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+                <target>1.7</target>
+                <source>1.7</source>
+                <encoding>UTF-8</encoding>
+                <compilerArguments>
+                    <verbose/>
+                    <bootclasspath>${java.home}/lib/rt.jar</bootclasspath>
+                    <!--<bootclasspath>${java.home}/lib/rt.jar:${java.home}/lib/jce.jar</bootclasspath>-->
+                </compilerArguments>
+            </configuration>
+        </plugin>
+
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>cobertura-maven-plugin</artifactId>
+            <version>2.4</version>
+            <configuration>
+                <encoding>UTF-8</encoding>
+                <formats>
+                    <format>html</format>
+                    <format>xml</format>
+                </formats>
+                <!--<instrumentation>-->
+                <!--<excludes>-->
+                <!--<exclude>com/lenxeon/app/bus/comment/api/*.class</exclude>-->
+                <!--<exclude>com/lenxeon/app/bus/comment/pojo/*.class</exclude>-->
+                <!--<exculde>com/lenxeon/app/bus/comment/exception/*.class</exculde>-->
+                <!--</excludes>-->
+                <!--</instrumentation>-->
+            </configuration>
+        </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.19</version>
+            <configuration>
+                <argLine>-Xmx1024m -XX:PermSize=1024m -XX:MaxPermSize=1024m</argLine>
+                <!--<additionalClasspathElements>-->
+                <!--<additionalClasspathElement>-->
+                <!--${basedir}/target/test-classes-->
+                <!--</additionalClasspathElement>-->
+                <!--</additionalClasspathElements>-->
+                <suiteXmlFiles>
+                    <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+                <includes>
+                    <include>**/*Test.java</include>
+                </includes>
+                <!--跳过测试-->
+                <skipTests>false</skipTests>
+                <!--<excludes>-->
+                <!--<exclude>**/TestConstants.java</exclude>-->
+                <!--</excludes>-->
+                <!--<forkMode>pertest</forkMode>-->
+                <!--多线程-->
+                <parallel>classes</parallel>
+                <threadCount>10</threadCount>
+                <testFailureIgnore>true</testFailureIgnore>
+                <properties>
+                    <property>
+                        <name>usedefaultlisteners</name>
+                        <value>false</value>
+                    </property>
+                    <!--<property>-->
+                    <!--<name>listener</name>-->
+                    <!--<value>org.uncommons.reportng.</value>-->
+                    <!--</property>-->
+                </properties>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+
 </project>
