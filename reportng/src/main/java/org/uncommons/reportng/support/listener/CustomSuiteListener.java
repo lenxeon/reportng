@@ -29,10 +29,6 @@ public class CustomSuiteListener implements ISuiteListener {
     public void onStart(ISuite iSuite) {
         System.out.println("准备测试环境 iSuite " + iSuite.getClass().getName());
 
-
-
-
-
     }
 
     public void onFinish(ISuite iSuite) {

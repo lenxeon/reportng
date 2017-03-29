@@ -37,7 +37,7 @@ public class ReportMetadataTest implements ITest {
 
         ReportMetadata metadata = new ReportMetadata();
         String locale = metadata.getLocale().toString();
-        assert locale.equals("en_GB") : "Wrong locale: " + locale;
+        assert locale.equals("en_GB2") : "Wrong locale: " + locale;
     }
 
     @Test(testName = "语言本地化", description = "测试语言能否本地化")
@@ -51,7 +51,7 @@ public class ReportMetadataTest implements ITest {
     }
 
 
-    @Test
+    @Test(testName = "语言本地化默认测试", description = "测试语言默认本地化是否正确")
     public void testLocaleLanguageAndCountry() {
         // Unset any previously set property.
         System.setProperty(ReportMetadata.LOCALE_KEY, "fr_CA");
@@ -62,7 +62,7 @@ public class ReportMetadataTest implements ITest {
     }
 
 
-    @Test
+    @Test(testName = "语言本地化默认测试", description = "测试语言默认本地化是否正确")
     public void testLocaleLanguageCountryAndVariant() {
         // Unset any previously set property.
         System.setProperty(ReportMetadata.LOCALE_KEY, "fr_CA_POSIX");
