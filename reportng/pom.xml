@@ -33,9 +33,20 @@
             <version>3.0</version>
         </dependency>
         <dependency>
+            <groupId>com.github.spullara.mustache.java</groupId>
+            <artifactId>compiler</artifactId>
+            <version>0.8.16</version>
+        </dependency>
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.9.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>yugusoft</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies><build>
     <finalName>${project.artifactId}</finalName>
@@ -52,6 +63,30 @@
                     </fileset>
                 </filesets>
             </configuration>
+        </plugin>
+
+        <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>2.7</version>
+            <executions>
+                <execution>
+                    <id>copy-resources</id>
+                    <!--<phase>clean</phase>-->
+                    <goals>
+                        <goal>copy-resources</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>${basedir}/reports/html</outputDirectory>
+                        <resources>
+                            <resource>
+                                <directory>
+                                    ${basedir}/src/main/resources/css
+                                </directory>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </execution>
+            </executions>
         </plugin>
 
         <!--doc-->
@@ -128,6 +163,33 @@
             </configuration>
         </plugin>
 
+
+        <!--<plugin>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-surefire-plugin</artifactId>-->
+            <!--<version>2.16</version>-->
+            <!--<configuration>-->
+                <!--<systemPropertyVariables>-->
+                    <!--<report.title>Automation test results report</report.title>-->
+                    <!--<locale>en</locale>-->
+                <!--</systemPropertyVariables>-->
+                <!--<properties>-->
+                    <!--<property>-->
+                        <!--<name>listener</name>-->
+                        <!--<value>org.uncommons.reportng.support.listener.BaseHTMLReporter</value>-->
+                    <!--</property>-->
+                    <!--<property>-->
+                        <!--<name>usedefaultlisteners</name>-->
+                        <!--<vaue>false</vaue>-->
+                    <!--</property>-->
+                <!--</properties>-->
+                <!--&lt;!&ndash;<reportsDirectory>reports</reportsDirectory>&ndash;&gt;-->
+                <!--<suiteXmlFiles>-->
+                    <!--<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>-->
+                <!--</suiteXmlFiles>-->
+            <!--</configuration>-->
+        <!--</plugin>-->
+
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
@@ -143,6 +205,7 @@
                 <!--</additionalClasspathElements>-->
                 <suiteXmlFiles>
                     <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                    <!--<suiteXmlFile>src/test/resources/testng3.xml</suiteXmlFile>-->
                 </suiteXmlFiles>
                 <includes>
                     <include>**/*Test.java</include>

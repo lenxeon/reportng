@@ -16,13 +16,10 @@
 
 package org.uncommons.reportng.support.listener;
 
-import org.apache.commons.lang.StringUtils;
 import org.testng.*;
 
-import javax.annotation.Resource;
 import java.net.URL;
 import java.util.Collection;
-import java.util.Properties;
 
 /**
  * CustomSuiteListener listens to the events related to a test suite.

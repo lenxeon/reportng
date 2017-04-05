@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Unit Tests 3" verbose="1">
+
+    <!--这代码一个单元测试用例-->
+    <test name="ReportMetadataTest">
+        <classes>
+            <class name="org.uncommons.reportng.ReportMetadataTest"></class>
+        </classes>
+    </test>
+</suite>

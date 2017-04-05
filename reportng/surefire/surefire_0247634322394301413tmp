@@ -1,0 +1,7 @@
+#surefire_0
+#Thu Mar 30 21:16:46 CST 2017
+locale=en
+report.title=Automation test results report
+user.dir=/Volumes/data/workspace/report-ng/reportng
+localRepository=/Volumes/data/maven/repo
+basedir=/Volumes/data/workspace/report-ng/reportng

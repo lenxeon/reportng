@@ -18,6 +18,9 @@ package org.uncommons.reportng.support.listener;
 
 import org.testng.*;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * CustomSuiteListener listens to the events related to a test suite.
  *
@@ -32,6 +35,13 @@ public class CustomSuiteListener implements ISuiteListener {
     }
 
     public void onFinish(ISuite iSuite) {
-
+        System.out.println("=========================>>>>");
+        Map<String, ISuiteResult> results = iSuite.getResults();
+        for (ISuiteResult is : results.values()) {
+            System.out.println(is.getTestContext().getFailedTests());
+            System.out.println(is.getTestContext().getSkippedTests());
+            System.out.println(is.getTestContext().getPassedTests());
+        }
+        System.out.println("=========================<<<<");
     }
 }

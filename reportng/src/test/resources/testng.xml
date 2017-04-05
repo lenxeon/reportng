@@ -1,17 +1,17 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Unit Tests" verbose="1">
-
-    <!--这代码一个单元测试用例-->
-    <test name="鱼骨自动化测试项目">
-        <packages>
-            <package name="org.uncommons.reportng"/>
-        </packages>
-    </test>
+<suite name="Unit Tests1111">
+    <suite-files>
+        <suite-file path="testng2.xml"></suite-file>
+        <suite-file path="testng3.xml"></suite-file>
+    </suite-files>
     <parameter name="useDefaultListeners" value="false"/>
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.YuguIMReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="org.uncommons.reportng.support.listener.BaseHTMLReporter"/>
         <listener class-name="org.uncommons.reportng.support.listener.CustomSuiteListener"/>
         <listener class-name="org.uncommons.reportng.support.listener.CustomTestListener"/>
         <listener class-name="org.uncommons.reportng.support.listener.CustomResultListener"/>

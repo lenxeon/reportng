@@ -29,42 +29,42 @@ public class CustomResultListener implements IResultListener {
 
 
     public void onTestStart(ITestResult iTestResult) {
-//        System.out.println("onTestStart:"+iTestResult.getName());
+        //System.out.println("onTestStart:"+iTestResult.getName());
     }
 
     public void onTestSuccess(ITestResult iTestResult) {
-
+        //System.out.println("onTestSuccess:"+iTestResult.getName());
     }
 
     public void onTestFailure(ITestResult iTestResult) {
-
+        //System.out.println("onTestFailure:"+iTestResult.getName());
     }
 
     public void onTestSkipped(ITestResult iTestResult) {
-
+        //System.out.println("onTestSkipped:"+iTestResult.getName());
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-
+        //System.out.println("onTestFailedButWithinSuccessPercentage:"+iTestResult.getName());
     }
 
     public void onStart(ITestContext iTestContext) {
-
+        //System.out.println("onStart:"+iTestContext.getName());
     }
 
     public void onFinish(ITestContext iTestContext) {
-
+        //System.out.println("onFinish:"+iTestContext.getName());
     }
 
     public void onConfigurationSuccess(ITestResult iTestResult) {
-
+        //System.out.println("onConfigurationSuccess:"+iTestResult.getName());
     }
 
     public void onConfigurationFailure(ITestResult iTestResult) {
-
+        //System.out.println("onConfigurationFailure:"+iTestResult.getName());
     }
 
     public void onConfigurationSkip(ITestResult iTestResult) {
-
+        //System.out.println("onConfigurationSkip:"+iTestResult.getName());
     }
 }

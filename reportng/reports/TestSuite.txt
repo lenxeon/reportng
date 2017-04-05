@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 29, Failures: 6, Errors: 0, Skipped: 3, Time elapsed: 0.485 sec <<< FAILURE! - in TestSuite
+本地化测试用例(org.uncommons.reportng.ReportMetadataTest)  Time elapsed: 0.01 sec  <<< FAILURE!
+java.lang.AssertionError: Wrong locale: en_GB
+	at org.uncommons.reportng.ReportMetadataTest.testDefaultLocale(ReportMetadataTest.java:40)
+
+configure(org.uncommons.reportng.sample.FailedConfiguration)  Time elapsed: 0.003 sec  <<< FAILURE!
+java.lang.RuntimeException: Configuration failed.
+	at org.uncommons.reportng.sample.FailedConfiguration.configure(FailedConfiguration.java:35)
+
+(org.uncommons.reportng.sample.FailedTests)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: This test failed.
+	at org.uncommons.reportng.sample.FailedTests.assertionFailure(FailedTests.java:31)
+
+(org.uncommons.reportng.sample.FailedTests)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: This test failed.
+Its message is on multiple lines.
+     The last one has leading whitespace.
+	at org.uncommons.reportng.sample.FailedTests.assertionFailureWithMultilineMessage(FailedTests.java:38)
+
+(org.uncommons.reportng.sample.FailedTests)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: This test failed.
+	at org.uncommons.reportng.sample.FailedTests.assertionFailureWithOutput(FailedTests.java:46)
+
+(org.uncommons.reportng.sample.FailedTests)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.IllegalStateException: Test failed.
+	at org.uncommons.reportng.sample.FailedTests.exceptionThrown(FailedTests.java:53)
+

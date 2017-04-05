@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestSuite" time="0.017" tests="29" errors="0" skipped="3" failures="6">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="24.80-b11"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Volumes/data/workspace/report-ng/reportng"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Volumes/data/workspace/report-ng/reportng"/>
+    <property name="java.runtime.version" value="1.7.0_80-b15"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/_g/g1hx4vw13yq4ds8v5v8wy5ch0000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.3.9/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/lenxeon/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.11.6"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/lenxeon"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="lenxeon"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.3.9/libexec/boot/plexus-classworlds-2.5.2.jar"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="debug"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -X"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_80"/>
+    <property name="java.ext.dirs" value="/Users/lenxeon/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.3.9/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="本地化测试用例" classname="org.uncommons.reportng.ReportMetadataTest" time="0.01">
+    <failure message="Wrong locale: en_GB" type="java.lang.AssertionError">java.lang.AssertionError: Wrong locale: en_GB
+	at org.uncommons.reportng.ReportMetadataTest.testDefaultLocale(ReportMetadataTest.java:40)
+</failure>
+  </testcase>
+  <testcase name="本地化测试用例" classname="org.uncommons.reportng.ReportMetadataTest" time="0"/>
+  <testcase name="本地化测试用例" classname="org.uncommons.reportng.ReportMetadataTest" time="0"/>
+  <testcase name="本地化测试用例" classname="org.uncommons.reportng.ReportMetadataTest" time="0"/>
+  <testcase name="自动化测试用例" classname="org.uncommons.reportng.ReportNGUtilsTest" time="0"/>
+  <testcase name="自动化测试用例" classname="org.uncommons.reportng.ReportNGUtilsTest" time="0"/>
+  <testcase name="自动化测试用例" classname="org.uncommons.reportng.ReportNGUtilsTest" time="0"/>
+  <testcase name="自动化测试用例" classname="org.uncommons.reportng.ReportNGUtilsTest" time="0.001"/>
+  <testcase name="自动化测试用例" classname="org.uncommons.reportng.ReportNGUtilsTest" time="0.001"/>
+  <testcase name="自动化测试用例" classname="org.uncommons.reportng.ReportNGUtilsTest" time="0"/>
+  <testcase name="testProvider" classname="org.uncommons.reportng.sample.DataProviderTest" time="0"/>
+  <testcase name="testProvider" classname="org.uncommons.reportng.sample.DataProviderTest" time="0"/>
+  <testcase name="testProvider" classname="org.uncommons.reportng.sample.DataProviderTest" time="0"/>
+  <testcase name="testProvider2" classname="org.uncommons.reportng.sample.DataProviderTest" time="0"/>
+  <testcase name="testProvider2" classname="org.uncommons.reportng.sample.DataProviderTest" time="0"/>
+  <testcase name="testProvider2" classname="org.uncommons.reportng.sample.DataProviderTest" time="0"/>
+  <testcase name="configure" classname="org.uncommons.reportng.sample.FailedConfiguration" time="0.003">
+    <failure message="Configuration failed." type="java.lang.RuntimeException">java.lang.RuntimeException: Configuration failed.
+	at org.uncommons.reportng.sample.FailedConfiguration.configure(FailedConfiguration.java:35)
+</failure>
+  </testcase>
+  <testcase name="thisShouldBeSkipped" classname="org.uncommons.reportng.sample.FailedConfiguration" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="(org.uncommons.reportng.sample.FailedTests)" classname="org.uncommons.reportng.sample.FailedTests" time="0">
+    <failure message="This test failed." type="java.lang.AssertionError">java.lang.AssertionError: This test failed.
+	at org.uncommons.reportng.sample.FailedTests.assertionFailure(FailedTests.java:31)
+</failure>
+  </testcase>
+  <testcase name="(org.uncommons.reportng.sample.FailedTests)" classname="org.uncommons.reportng.sample.FailedTests" time="0">
+    <failure message="This test failed.&#10;Its message is on multiple lines.&#10;     The last one has leading whitespace." type="java.lang.AssertionError">java.lang.AssertionError: This test failed.
+Its message is on multiple lines.
+     The last one has leading whitespace.
+	at org.uncommons.reportng.sample.FailedTests.assertionFailureWithMultilineMessage(FailedTests.java:38)
+</failure>
+  </testcase>
+  <testcase name="(org.uncommons.reportng.sample.FailedTests)" classname="org.uncommons.reportng.sample.FailedTests" time="0">
+    <failure message="This test failed." type="java.lang.AssertionError">java.lang.AssertionError: This test failed.
+	at org.uncommons.reportng.sample.FailedTests.assertionFailureWithOutput(FailedTests.java:46)
+</failure>
+  </testcase>
+  <testcase name="(org.uncommons.reportng.sample.FailedTests)" classname="org.uncommons.reportng.sample.FailedTests" time="0.001">
+    <failure message="Test failed." type="java.lang.IllegalStateException">java.lang.IllegalStateException: Test failed.
+	at org.uncommons.reportng.sample.FailedTests.exceptionThrown(FailedTests.java:53)
+</failure>
+  </testcase>
+  <testcase name="NamedTest" classname="org.uncommons.reportng.sample.NamedTest" time="0"/>
+  <testcase name="(org.uncommons.reportng.sample.SuccessfulTests)" classname="org.uncommons.reportng.sample.SuccessfulTests" time="0"/>
+  <testcase name="(org.uncommons.reportng.sample.SuccessfulTests)" classname="org.uncommons.reportng.sample.SuccessfulTests" time="0"/>
+  <testcase name="(org.uncommons.reportng.sample.SuccessfulTests)" classname="org.uncommons.reportng.sample.SuccessfulTests" time="0.001"/>
+  <testcase name="(org.uncommons.reportng.sample.SuccessfulTests)" classname="org.uncommons.reportng.sample.SuccessfulTests" time="0"/>
+  <testcase name="skippedDueToDependentGroup" classname="org.uncommons.reportng.sample.SkippedTests" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="skippedDueToDependentMethod" classname="org.uncommons.reportng.sample.SkippedTests" time="0">
+    <skipped/>
+  </testcase>
+</testsuite>

@@ -16,6 +16,7 @@
 package org.uncommons.reportng;
 
 import org.testng.ITest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.util.Locale;
@@ -27,6 +28,11 @@ import java.util.Locale;
  */
 
 public class ReportMetadataTest implements ITest {
+
+    @BeforeSuite
+    public void prepare() {
+        System.setProperty("report.title", "私密相册自动化测试报告");
+    }
 
     @Test(testName = "语言本地化默认测试", description = "测试语言默认本地化是否正确")
     public void testDefaultLocale() {

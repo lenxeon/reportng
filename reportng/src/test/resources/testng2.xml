@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="First suite" parallel="tests" thread-count="2">
+
+    <!--这代码一个单元测试用例-->
+    <test name="ReportNGUtilsTest">
+        <classes>
+            <class name="org.uncommons.reportng.ReportNGUtilsTest"></class>
+        </classes>
+    </test>
+</suite>

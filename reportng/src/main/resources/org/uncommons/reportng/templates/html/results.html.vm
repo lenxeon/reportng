@@ -27,7 +27,7 @@
         #set ($id = 0)
         #foreach ($testClass in $failedConfigurations.keySet())
             <tr class="group">
-                <td colspan="3" class="group">模块: $testClass.testName<br/><span>类: $testClass.name</span></td>
+                <td colspan="3">$testClass.name</td>
             </tr>
             #set ($classResults = $failedConfigurations.get($testClass))
             #parse("org/uncommons/reportng/templates/html/class-results.html.vm")
